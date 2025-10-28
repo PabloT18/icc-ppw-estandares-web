@@ -11,11 +11,11 @@
 
 ## W3C y los Estándares Web - El Marco General
 
-### 🏛️ Definición Técnica
+### Definición 
 
 El **World Wide Web Consortium (W3C)** es la organización internacional que desarrolla estándares web abiertos para asegurar el crecimiento a largo plazo de la Web. Actúa como el "arquitecto jefe" de Internet, estableciendo las reglas que todos los navegadores, desarrolladores y tecnologías web deben seguir.
 
-### 🌳 Analogía: El W3C como el "Código Civil" de Internet
+###  Analogía: El W3C como el "Código Civil" de Internet
 
 Imagina que Internet es una ciudad global:
 - **W3C** = El código civil que establece las leyes fundamentales
@@ -23,7 +23,7 @@ Imagina que Internet es una ciudad global:
 - **Accesibilidad** = Las regulaciones de acceso universal (rampas, señalización braille)
 - **SEO** = Las técnicas de marketing que siguen las leyes existentes
 
-### 📊 Jerarquía de Estándares
+###  Jerarquía de Estándares
 
 | Nivel                    | Rol                                                                                                                 | Ejemplo práctico                                                                  |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
@@ -32,7 +32,7 @@ Imagina que Internet es una ciudad global:
 | **Accesibilidad (WCAG)** | Es un conjunto de **directrices del W3C** para que la web sea usable por todos.                                     | Asegura que personas con discapacidad puedan navegar un sitio.                    |
 | **SEO**                  | No es estándar formal del W3C, pero **usa sus estándares** correctamente para mejorar la visibilidad en buscadores. | Los buscadores "leen" etiquetas y estructura HTML definidas por el W3C.           |
 
-### 🔧 Procesos de Estandarización
+###  Procesos de Estandarización
 
 1. **Working Draft (WD)** - Borrador inicial
 2. **Candidate Recommendation (CR)** - Candidato a recomendación
@@ -43,15 +43,15 @@ Imagina que Internet es una ciudad global:
 
 ## HTML5 y CSS3 - Estructura, Semántica y Diseño
 
-### 🏗️ HTML5: Definición Técnica
+###  HTML5: Definición Técnica
 
 **HTML5** es la quinta versión del lenguaje de marcado HTML, que introduce elementos semánticos, APIs modernas y soporte multimedia nativo. Se enfoca en separar la **estructura** (HTML) del **diseño** (CSS) y del **comportamiento** (JavaScript).
 
-### 🎨 CSS3: Definición Técnica
+### CSS3: Definición Técnica
 
 **CSS3** es la tercera evolución de las Hojas de Estilo en Cascada, organizada en módulos independientes que permiten animaciones, transformaciones, diseño responsivo y efectos visuales avanzados.
 
-### 🧱 Analogía: Construcción de una Casa
+### Analogía: Construcción de una Casa
 
 ```
 HTML5 = Estructura (cimientos, paredes, habitaciones)
@@ -59,7 +59,7 @@ CSS3 = Decoración (pintura, muebles, iluminación)
 JavaScript = Electricidad (interruptores, electrodomésticos)
 ```
 
-### 📝 Elementos Semánticos Clave
+###  Elementos Semánticos Clave
 
 #### Ejemplo del código HTML:
 ```html
@@ -102,7 +102,7 @@ JavaScript = Electricidad (interruptores, electrodomésticos)
 - `<aside>`: Información complementaria
 - `<footer>`: Pie de página con información secundaria
 
-### 🎯 CSS3 - Técnicas Modernas
+###  CSS3 - Técnicas Modernas
 
 #### Ejemplo del código CSS:
 ```css
@@ -471,7 +471,7 @@ document.getElementById('form-status').textContent =
           content="Aprende los estándares web del W3C: HTML5 semántico, CSS3 moderno, accesibilidad WCAG y mejores prácticas SEO. Guía técnica completa.">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://ejemplo.com/estandares-web">
+    <link rel="canonical" href="https://pablot18.github.io/icc-ppw-estandares-web/">
     
     <!-- Datos estructurados JSON-LD -->
     <script type="application/ld+json">
@@ -486,7 +486,7 @@ document.getElementById('form-status').textContent =
         "datePublished": "2024-10-28",
         "dateModified": "2024-10-28",
         "description": "Aprende los estándares web del W3C: HTML5, CSS3, accesibilidad y SEO",
-        "mainEntityOfPage": "https://ejemplo.com/estandares-web",
+        "mainEntityOfPage": "https://pablot18.github.io/icc-ppw-estandares-web/",
         "publisher": {
             "@type": "Organization",
             "name": "Universidad Politecnica Salesiana - Ciencias de la Computación"
@@ -496,26 +496,25 @@ document.getElementById('form-status').textContent =
 </head>
 ```
 
-### 🔗 **CANONICAL URL - Control de Contenido Duplicado**
+### **CANONICAL URL - Control de Contenido Duplicado**
 
 #### ¿Qué es y por qué lo ponemos?
 
 La **etiqueta canonical** es como el "DNI oficial" de una página web. Le dice a Google: *"Esta es la versión verdadera y oficial de este contenido"*.
 
 ```html
-<link rel="canonical" href="https://ejemplo.com/estandares-web">
+<link rel="canonical" href="https://pablot18.github.io/icc-ppw-estandares-web/">
 ```
 
-#### 🎯 **¿Por qué es crucial para SEO?**
+#### **¿Por qué es crucial para SEO?**
 
 **Problema sin canonical:**
 ```
 Tu página puede ser accesible desde múltiples URLs:
-- https://ejemplo.com/estandares-web
-- https://ejemplo.com/estandares-web?utm_source=facebook
-- https://www.ejemplo.com/estandares-web
-- https://ejemplo.com/estandares-web/
-- https://ejemplo.com/estandares-web#seccion1
+- https://pablot18.github.io/icc-ppw-estandares-web/
+- https://pablot18.github.io/icc-ppw-estandares-web/?utm_source=facebook
+- https://pablot18.github.io/icc-ppw-estandares-web/index.html
+- https://pablot18.github.io/icc-ppw-estandares-web/#seccion1
 ```
 
 **Google ve estas como páginas diferentes** → Divide el "poder SEO" → Peor posicionamiento
@@ -523,10 +522,10 @@ Tu página puede ser accesible desde múltiples URLs:
 **Solución canonical:**
 ```html
 <!-- Todas las versiones apuntan a una sola URL "oficial" -->
-<link rel="canonical" href="https://ejemplo.com/estandares-web">
+<link rel="canonical" href="https://pablot18.github.io/icc-ppw-estandares-web/">
 ```
 
-#### 📊 **Beneficios técnicos:**
+####  **Beneficios técnicos:**
 
 1. **Consolida Link Equity**: Todo el "juice" de enlaces va a una sola URL
 2. **Evita penalizaciones**: Google no ve contenido duplicado
@@ -539,7 +538,7 @@ Sin canonical = 5 personas con el mismo CV aplicando al mismo trabajo
 Con canonical = 1 persona con CV consolidado y fuerte
 ```
 
-### 📊 **JSON-LD - Datos Estructurados para Buscadores**
+###  **JSON-LD - Datos Estructurados para Buscadores**
 
 #### ¿Qué es y por qué lo usamos?
 
@@ -557,7 +556,7 @@ Con canonical = 1 persona con CV consolidado y fuerte
     "datePublished": "2024-10-28",
     "dateModified": "2024-10-28",
     "description": "Aprende los estándares web del W3C: HTML5, CSS3, accesibilidad y SEO",
-    "mainEntityOfPage": "https://ejemplo.com/estandares-web",
+    "mainEntityOfPage": "https://pablot18.github.io/icc-ppw-estandares-web/",
     "publisher": {
         "@type": "Organization",
         "name": "Universidad Politecnica Salesiana - Ciencias de la Computación"
@@ -653,14 +652,14 @@ actualizado hoy. Lo catalogaré como contenido técnico de alta calidad."
 
 ```html
 <!-- Canonical dice: "Esta es la URL oficial" -->
-<link rel="canonical" href="https://ejemplo.com/estandares-web">
+<link rel="canonical" href="https://pablot18.github.io/icc-ppw-estandares-web/">
 
 <!-- JSON-LD dice: "Este es el contenido oficial de esa URL" -->
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Article",
-    "mainEntityOfPage": "https://ejemplo.com/estandares-web"  // ¡Misma URL!
+    "mainEntityOfPage": "https://pablot18.github.io/icc-ppw-estandares-web/"  // ¡Misma URL!
 }
 </script>
 ```
