@@ -1,0 +1,971 @@
+/* =============================================
+   ESTILOS PARA DEMOSTRACIÓN DE ESTÁNDARES WEB
+   Implementa CSS3 moderno, responsive design y accesibilidad
+   ============================================= */
+
+/* Reset y variables CSS */
+:root {
+    /* Colores con contraste WCAG AA */
+    --primary-color: #2c5282;
+    /* Ratio 4.5:1 en blanco */
+    --secondary-color: #4a90e2;
+    /* Ratio 3.1:1 en blanco */
+    --accent-color: #e53e3e;
+    /* Ratio 4.5:1 en blanco */
+    --text-color: #2d3748;
+    /* Ratio 12.6:1 en blanco */
+    --text-light: #4a5568;
+    /* Ratio 7.0:1 en blanco */
+    --bg-color: #ffffff;
+    --bg-secondary: #f7fafc;
+    --border-color: #e2e8f0;
+    --success-color: #38a169;
+    --warning-color: #d69e2e;
+
+    /* Tipografía */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+
+    /* Espaciado */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+
+    /* Bordes y sombras */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    /* Breakpoints */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Utilidades para accesibilidad */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip link para navegación por teclado */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    z-index: 1000;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Layout principal con CSS Grid */
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "aside"
+        "footer";
+    grid-template-rows: auto 1fr auto auto;
+    min-height: 100vh;
+}
+
+/* Container responsivo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* =============================================
+   HEADER Y NAVEGACIÓN
+   ============================================= */
+
+header {
+    grid-area: header;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: var(--spacing-xl) 0;
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0 0 var(--spacing-xl) 0;
+}
+
+/* Navegación principal con Flexbox */
+nav[role="navigation"] ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav[role="navigation"] a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid transparent;
+}
+
+nav[role="navigation"] a:hover,
+nav[role="navigation"] a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    outline: none;
+    border-color: white;
+}
+
+/* =============================================
+   CONTENIDO PRINCIPAL
+   ============================================= */
+
+main {
+    grid-area: main;
+    padding: var(--spacing-xxl) 0;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: var(--spacing-xl);
+}
+
+.breadcrumb ol {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "→";
+    margin: 0 var(--spacing-sm);
+    color: var(--text-light);
+}
+
+.breadcrumb a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Secciones */
+section {
+    margin-bottom: var(--spacing-xxl);
+    scroll-margin-top: 2rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+section h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+section h4 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Artículos */
+article {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--box-shadow);
+}
+
+/* =============================================
+   ELEMENTOS INTERACTIVOS
+   ============================================= */
+
+/* Botones accesibles */
+button,
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    min-height: 44px;
+    /* Mínimo táctil para accesibilidad */
+}
+
+button:hover,
+.button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-lg);
+}
+
+button:focus,
+.button:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+button:active,
+.button:active {
+    transform: translateY(0);
+}
+
+/* Estados deshabilitados */
+button:disabled {
+    background-color: var(--text-light);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =============================================
+   FORMULARIOS ACCESIBLES
+   ============================================= */
+
+.accessible-form {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+}
+
+label span[aria-label] {
+    color: var(--accent-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    min-height: 44px;
+    /* Accesibilidad táctil */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+input[aria-invalid="true"] {
+    border-color: var(--accent-color);
+}
+
+.help-text {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: var(--spacing-xs);
+}
+
+/* Fieldsets y radios */
+fieldset {
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+legend {
+    font-weight: 600;
+    padding: 0 var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+/* =============================================
+   TABLAS ACCESIBLES
+   ============================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-lg) 0;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+caption {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+th,
+td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: var(--bg-secondary);
+}
+
+/* =============================================
+   COMPONENTES ESPECÍFICOS
+   ============================================= */
+
+/* Demo CSS Grid */
+.demo-box {
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    margin: var(--spacing-lg) 0;
+}
+
+.grid-demo {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "nav aside"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: var(--spacing-sm);
+    height: 300px;
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm);
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.header-demo {
+    grid-area: header;
+    background-color: var(--primary-color);
+}
+
+.nav-demo {
+    grid-area: nav;
+    background-color: var(--secondary-color);
+}
+
+.main-demo {
+    grid-area: main;
+    background-color: var(--success-color);
+}
+
+.aside-demo {
+    grid-area: aside;
+    background-color: var(--warning-color);
+}
+
+.footer-demo {
+    grid-area: footer;
+    background-color: var(--text-light);
+}
+
+/* Lista de principios */
+.principles-list {
+    list-style: none;
+    padding: 0;
+}
+
+.principles-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.principles-list span[aria-hidden] {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* SEO Showcase */
+.seo-showcase details {
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.seo-showcase summary {
+    padding: var(--spacing-md);
+    background-color: var(--bg-secondary);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.seo-showcase summary:hover {
+    background-color: var(--border-color);
+}
+
+.seo-showcase details[open] summary {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.seo-showcase details>div {
+    padding: var(--spacing-md);
+}
+
+.seo-showcase code {
+    display: block;
+    background-color: #f1f5f9;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    margin: var(--spacing-sm) 0;
+    overflow-x: auto;
+}
+
+/* Checklist SEO */
+.seo-checklist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.seo-checklist li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--success-color);
+}
+
+.seo-checklist input[type="checkbox"] {
+    width: auto;
+    margin-right: var(--spacing-sm);
+}
+
+.check-desc {
+    font-size: 0.875rem;
+    color: var(--success-color);
+    font-weight: 500;
+}
+
+/* Demostración de integración */
+.integration-demo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg);
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+}
+
+.concept-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    min-width: 120px;
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.concept-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--box-shadow-lg);
+}
+
+.concept-card h4 {
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: 1rem;
+}
+
+.concept-card p {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.concept-card .icon {
+    font-size: 2rem;
+    display: block;
+}
+
+.w3c-card {
+    border-color: var(--primary-color);
+}
+
+.html-card {
+    border-color: var(--secondary-color);
+}
+
+.css-card {
+    border-color: var(--success-color);
+}
+
+.a11y-card {
+    border-color: var(--warning-color);
+}
+
+.seo-card {
+    border-color: var(--accent-color);
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+/* =============================================
+   ASIDE / SIDEBAR
+   ============================================= */
+
+aside {
+    grid-area: aside;
+    background-color: var(--bg-secondary);
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid var(--border-color);
+}
+
+aside h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    margin-bottom: var(--spacing-sm);
+}
+
+aside a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: block;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+aside a:hover {
+    background-color: white;
+    text-decoration: underline;
+}
+
+.tools-widget {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+footer {
+    grid-area: footer;
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-xl) 0;
+}
+
+footer h4 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+footer a {
+    color: var(--secondary-color);
+}
+
+footer a:hover {
+    color: white;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: var(--spacing-lg);
+}
+
+.legal-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: var(--spacing-lg);
+    text-align: center;
+}
+
+.back-to-top {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.back-to-top a {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =============================================
+   CÓDIGO Y EJEMPLOS
+   ============================================= */
+
+pre {
+    background-color: #1a202c;
+    color: #e2e8f0;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin: var(--spacing-md) 0;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+}
+
+/* Elementos inline code */
+p code,
+li code {
+    background-color: var(--bg-secondary);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+
+/* Tablet */
+@media (min-width: 768px) {
+    body {
+        grid-template-areas:
+            "header header"
+            "main aside"
+            "footer footer";
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .integration-demo {
+        flex-wrap: nowrap;
+    }
+
+    .arrow {
+        display: block;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+    }
+
+    section h2 {
+        font-size: 2.5rem;
+    }
+
+    .grid-demo {
+        height: 400px;
+        grid-template-columns: 250px 1fr;
+    }
+}
+
+/* Móvil pequeño */
+@media (max-width: 640px) {
+    nav[role="navigation"] ul {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .integration-demo {
+        flex-direction: column;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+
+    .grid-demo {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .breadcrumb ol {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+        content: "↓";
+        margin: var(--spacing-xs) 0;
+    }
+}
+
+/* =============================================
+   ANIMACIONES Y TRANSICIONES
+   ============================================= */
+
+/* Animación de aparición */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación a secciones cuando aparecen */
+section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Reducir animaciones para usuarios que las prefieren */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* =============================================
+   MODO ALTO CONTRASTE (Windows)
+   ============================================= */
+
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000000;
+        --secondary-color: #0000FF;
+        --text-color: #000000;
+        --bg-color: #FFFFFF;
+        --border-color: #000000;
+    }
+
+    button,
+    .button {
+        border: 2px solid currentColor;
+    }
+
+    input,
+    textarea,
+    select {
+        border-width: 3px;
+    }
+}
+
+/* =============================================
+   IMPRESIÓN
+   ============================================= */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    header,
+    aside,
+    footer,
+    nav,
+    .demo-box,
+    .integration-demo {
+        display: none;
+    }
+
+    main {
+        grid-area: auto;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+    }
+
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    article {
+        page-break-inside: avoid;
+    }
+}

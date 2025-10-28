@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Meta basicos para SEO -->
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Título optimizado para le SEO (50-60 caracteres) -->
+    <title>Estándares Web W3C: HTML5, CSS3 y Accesibilidad | Guía 2024</title>
+
+    <!-- Meta descripción para el SEO (150-160 caracteres) -->
+    <meta
+        name="description"
+        content="Aprende los estándares web del W3C: HTML5 semántico, CSS3 moderno, accesibilidad WCAG y mejores prácticas SEO. Guía técnica completa con ejemplos."
+    >
+
+    <!-- Palabras claev -->
+    <meta
+        name="keywords"
+        content="W3C, HTML5, CSS3, accesibilidad web, SEO, estándares web, WCAG, semántica HTML"
+    >
+
+    <!-- Información autor -->
+    <meta
+        name="author"
+        content="Estudiante PRW-P67"
+    >
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <!-- Open Graph para redes sociales -->
+    <meta
+        property="og:title"
+        content="Estándares Web W3C - Guía Completa"
+    >
+    <meta
+        property="og:description"
+        content="Domina HTML5, CSS3, accesibilidad y SEO con ejemplos prácticos y definiciones técnicas"
+    >
+    <meta
+        property="og:type"
+        content="article"
+    >
+    <meta
+        property="og:url"
+        content="https://ejemplo.com/estandares-web"
+    >
+    <meta
+        property="og:image"
+        content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80"
+    >
+    <meta
+        property="og:image:width"
+        content="1200"
+    >
+    <meta
+        property="og:image:height"
+        content="630"
+    >
+    <meta
+        property="og:image:alt"
+        content="Código de programación web con estándares W3C, HTML5 y CSS3 en pantalla de desarrollador"
+    >
+
+    <!-- Twitter Cards -->
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+    <meta
+        name="twitter:title"
+        content="Estándares Web W3C - Guía Completa"
+    >
+    <meta
+        name="twitter:description"
+        content="Domina HTML5, CSS3, accesibilidad y SEO con ejemplos prácticos"
+    >
+    <meta
+        name="twitter:image"
+        content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80"
+    >
+    <meta
+        name="twitter:image:alt"
+        content="Código de programación web con estándares W3C, HTML5 y CSS3 en pantalla de desarrollador"
+    >
+
+    <!-- Canonical URL para evitar contenido duplicado -->
+    <link
+        rel="canonical"
+        href="https://ejemplo.com/estandares-web"
+    >
+
+    <!-- Datos estructurados JSON-LD para SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Guía Completa de Estándares Web W3C",
+        "author": {
+            "@type": "Person",
+            "name": "Pablo Torres"
+        },
+        "datePublished": "2024-10-28",
+        "dateModified": "2024-10-28",
+        "description": "Aprende los estándares web del W3C: HTML5, CSS3, accesibilidad y SEO",
+        "mainEntityOfPage": "https://ejemplo.com/estandares-web",
+        "publisher": {
+            "@type": "Organization",
+            "name": " Universidad Politecnica Salesiana - Ciencias de la Computación"
+        }
+    }
+    </script>
+
+    <!-- Enlace a CSS -->
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+</head>
+
+<body>
+    <!-- Skip link para accesibilidad -->
+    <a
+        href="#main-content"
+        class="skip-link"
+    >Saltar al contenido principal</a>
+
+    <!-- Header semántico -->
+    <header role="banner">
+        <div class="container">
+            <h1>Estándares Web W3C</h1>
+            <p class="subtitle">HTML5, CSS3, Accesibilidad y SEO en la práctica</p>
+
+            <!-- Navegación principal con accesibilidad -->
+            <nav
+                role="navigation"
+                aria-label="Navegación principal"
+            >
+                <ul>
+                    <li><a
+                            href="#w3c"
+                            aria-describedby="nav-w3c"
+                        >W3C</a></li>
+                    <li><a
+                            href="#html5-css3"
+                            aria-describedby="nav-html"
+                        >HTML5 y CSS3</a></li>
+                    <li><a
+                            href="#accesibilidad"
+                            aria-describedby="nav-a11y"
+                        >Accesibilidad</a></li>
+                    <li><a
+                            href="#seo"
+                            aria-describedby="nav-seo"
+                        >SEO</a></li>
+                </ul>
+                <!-- Tooltips ocultos para lectores de pantalla -->
+                <div
+                    id="nav-w3c"
+                    class="sr-only"
+                >Información sobre el World Wide Web Consortium</div>
+                <div
+                    id="nav-html"
+                    class="sr-only"
+                >Conceptos de HTML5 y CSS3</div>
+                <div
+                    id="nav-a11y"
+                    class="sr-only"
+                >Accesibilidad web y WCAG</div>
+                <div
+                    id="nav-seo"
+                    class="sr-only"
+                >Optimización para motores de búsqueda</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main
+        id="main-content"
+        role="main"
+    >
+        <div class="container">
+
+            <!-- Breadcrumb para navegación y SEO -->
+            <nav
+                aria-label="Breadcrumb"
+                class="breadcrumb"
+            >
+                <ol>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/cursos">Cursos</a></li>
+                    <li aria-current="page">Estándares Web</li>
+                </ol>
+            </nav>
+
+            <!-- Sección W3C -->
+            <section
+                id="w3c"
+                aria-labelledby="w3c-heading"
+            >
+                <h2 id="w3c-heading">🏛️ W3C: El Marco General de los Estándares Web</h2>
+
+                <article>
+                    <h3>¿Qué es el W3C?</h3>
+                    <p>
+                        El <strong>World Wide Web Consortium (W3C)</strong> es la organización internacional
+                        que desarrolla <em>estándares web abiertos</em> para asegurar el crecimiento a largo
+                        plazo de la Web. Actúa como el <mark>"arquitecto jefe"</mark> de Internet.
+                    </p>
+
+                    <!-- Imagen con alt text descriptivo para accesibilidad -->
+                    <figure>
+                        <img
+                            src="https://via.placeholder.com/600x300/4A90E2/FFFFFF?text=W3C+Estandares+Web"
+                            alt="Diagrama que muestra la jerarquía de estándares web del W3C, con HTML5, CSS3 y WCAG como ramas principales"
+                            loading="lazy"
+                        >
+                        <figcaption>
+                            Estructura jerárquica de los estándares web del W3C
+                        </figcaption>
+                    </figure>
+
+                    <!-- Tabla accesible con headers -->
+                    <table aria-label="Comparación de niveles de estándares web">
+                        <caption>Jerarquía de los Estándares Web</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Nivel</th>
+                                <th scope="col">Rol</th>
+                                <th scope="col">Ejemplo práctico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">W3C (marco)</th>
+                                <td>Crea los estándares y recomendaciones técnicas</td>
+                                <td>Define cómo debe funcionar una etiqueta HTML</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">HTML5 / CSS3</th>
+                                <td>Estándares derivados del W3C</td>
+                                <td>HTML5 define qué es &lt;header&gt;, CSS3 cómo se ve</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Accesibilidad (WCAG)</th>
+                                <td>Directrices del W3C para inclusión</td>
+                                <td>Asegura que todos puedan navegar el sitio</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">SEO</th>
+                                <td>Usa estándares W3C para visibilidad</td>
+                                <td>Los buscadores leen etiquetas HTML del W3C</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+
+            <!-- Sección HTML5 y CSS3 -->
+            <section
+                id="html5-css3"
+                aria-labelledby="html-css-heading"
+            >
+                <h2 id="html-css-heading">🏗️ HTML5 y CSS3: Estructura Semántica y Diseño</h2>
+
+                <article>
+                    <h3>Elementos Semánticos HTML5</h3>
+                    <p>
+                        HTML5 introduce elementos semánticos que dan <strong>significado</strong>
+                        al contenido, no solo presentación visual.
+                    </p>
+
+                    <!-- Ejemplo de código con syntax highlighting -->
+                    <details>
+                        <summary>Ver ejemplo de estructura semántica</summary>
+                        <pre><code>&lt;header&gt;
+    &lt;nav aria-label="Navegación principal"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#inicio"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;article&gt;
+            &lt;h1&gt;Título del artículo&lt;/h1&gt;
+            &lt;p&gt;Contenido del artículo...&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;aside&gt;
+    &lt;h3&gt;Información relacionada&lt;/h3&gt;
+&lt;/aside&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2024 Derechos reservados&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+                    </details>
+
+                    <!-- Demo interactivo -->
+                    <div
+                        class="demo-box"
+                        role="region"
+                        aria-label="Demostración de CSS Grid"
+                    >
+                        <h4>Demo: CSS Grid Layout</h4>
+                        <div class="grid-demo">
+                            <div class="grid-item header-demo">Header</div>
+                            <div class="grid-item nav-demo">Nav</div>
+                            <div class="grid-item main-demo">Main Content</div>
+                            <div class="grid-item aside-demo">Aside</div>
+                            <div class="grid-item footer-demo">Footer</div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Sección Accesibilidad -->
+            <section
+                id="accesibilidad"
+                aria-labelledby="a11y-heading"
+            >
+                <h2 id="a11y-heading">♿ Accesibilidad Web (A11y)</h2>
+
+                <article>
+                    <h3>Principios WCAG 2.1</h3>
+                    <p>
+                        La accesibilidad web se basa en cuatro principios fundamentales
+                        establecidos por las <abbr title="Web Content Accessibility Guidelines">WCAG</abbr>:
+                    </p>
+
+                    <!-- Lista con íconos accesibles -->
+                    <ul class="principles-list">
+                        <li>
+                            <span aria-hidden="true">👁️</span>
+                            <strong>Perceptible:</strong> La información debe ser presentada de formas que los usuarios
+                            puedan percibir
+                        </li>
+                        <li>
+                            <span aria-hidden="true">⚡</span>
+                            <strong>Operable:</strong> Los componentes de la interfaz deben ser operables
+                        </li>
+                        <li>
+                            <span aria-hidden="true">🧠</span>
+                            <strong>Comprensible:</strong> La información debe ser comprensible
+                        </li>
+                        <li>
+                            <span aria-hidden="true">🛡️</span>
+                            <strong>Robusto:</strong> El contenido debe ser interpretable por diversas tecnologías
+                        </li>
+                    </ul>
+
+                    <!-- Formulario accesible como ejemplo -->
+                    <form
+                        class="accessible-form"
+                        aria-labelledby="form-heading"
+                    >
+                        <h4 id="form-heading">Ejemplo de Formulario Accesible</h4>
+
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo <span aria-label="campo requerido">*</span>:</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                required
+                                aria-describedby="nombre-ayuda"
+                                aria-invalid="false"
+                            >
+                            <div
+                                id="nombre-ayuda"
+                                class="help-text"
+                            >
+                                Ingrese su nombre y apellido
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo electrónico <span aria-label="campo requerido">*</span>:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                aria-describedby="email-ayuda"
+                            >
+                            <div
+                                id="email-ayuda"
+                                class="help-text"
+                            >
+                                Ejemplo: usuario@dominio.com
+                            </div>
+                        </div>
+
+                        <fieldset>
+                            <legend>Nivel de experiencia</legend>
+                            <div class="radio-group">
+                                <input
+                                    type="radio"
+                                    id="principiante"
+                                    name="nivel"
+                                    value="principiante"
+                                >
+                                <label for="principiante">Principiante</label>
+                            </div>
+                            <div class="radio-group">
+                                <input
+                                    type="radio"
+                                    id="intermedio"
+                                    name="nivel"
+                                    value="intermedio"
+                                >
+                                <label for="intermedio">Intermedio</label>
+                            </div>
+                            <div class="radio-group">
+                                <input
+                                    type="radio"
+                                    id="avanzado"
+                                    name="nivel"
+                                    value="avanzado"
+                                >
+                                <label for="avanzado">Avanzado</label>
+                            </div>
+                        </fieldset>
+
+                        <button
+                            type="submit"
+                            aria-describedby="submit-help"
+                        >
+                            Enviar información
+                        </button>
+                        <div
+                            id="submit-help"
+                            class="help-text"
+                        >
+                            Al enviar, acepta nuestros términos de uso
+                        </div>
+                    </form>
+
+                    <!-- Mensaje de estado para lectores de pantalla -->
+                    <div
+                        id="form-status"
+                        role="status"
+                        aria-live="polite"
+                        aria-atomic="true"
+                        class="sr-only"
+                    >
+                        <!-- Los mensajes aparecerán aquí dinámicamente -->
+                    </div>
+                </article>
+            </section>
+
+            <!-- Sección SEO -->
+            <section
+                id="seo"
+                aria-labelledby="seo-heading"
+            >
+                <h2 id="seo-heading">🔍 SEO: Optimización para Motores de Búsqueda</h2>
+
+                <article>
+                    <h3>Etiquetas Meta Fundamentales</h3>
+                    <p>
+                        El <abbr title="Search Engine Optimization">SEO</abbr> técnico se basa en
+                        usar correctamente los estándares HTML del W3C para comunicar efectivamente
+                        con los motores de búsqueda.
+                    </p>
+
+                    <!-- Showcase de etiquetas meta con explicaciones -->
+                    <div class="seo-showcase">
+                        <h4>Etiquetas implementadas en esta página:</h4>
+
+                        <details>
+                            <summary>Meta Title (Línea 7)</summary>
+                            <code>&lt;title&gt;Estándares Web W3C: HTML5, CSS3 y Accesibilidad | Guía 2024&lt;/title&gt;</code>
+                            <p><strong>Función:</strong> Aparece como título azul en resultados de Google. 50-60
+                                caracteres óptimo.</p>
+                        </details>
+
+                        <details>
+                            <summary>Meta Description (Líneas 10-12)</summary>
+                            <code>&lt;meta name="description" content="Aprende los estándares web del W3C..."&gt;</code>
+                            <p><strong>Función:</strong> Texto descriptivo bajo el título en Google. 150-160 caracteres
+                                óptimo.</p>
+                        </details>
+
+                        <details>
+                            <summary>Open Graph (Líneas 22-26)</summary>
+                            <code>&lt;meta property="og:title" content="Estándares Web W3C - Guía Completa"&gt;</code>
+                            <p><strong>Función:</strong> Controla cómo se ve el enlace al compartir en Facebook,
+                                LinkedIn, etc.</p>
+                        </details>
+
+                        <details>
+                            <summary>JSON-LD Structured Data (Líneas 35-50)</summary>
+                            <code>{"@type": "Article", "headline": "Guía Completa...", "author": {...}}</code>
+                            <p><strong>Función:</strong> Datos estructurados que ayudan a Google a entender el
+                                contenido.</p>
+                        </details>
+
+                        <details>
+                            <summary>Canonical URL (Línea 33)</summary>
+                            <code>&lt;link rel="canonical" href="https://ejemplo.com/estandares-web"&gt;</code>
+                            <p><strong>Función:</strong> Evita problemas de contenido duplicado especificando la URL
+                                preferida.</p>
+                        </details>
+                    </div>
+
+                    <!-- Checklist SEO -->
+                    <div
+                        class="seo-checklist"
+                        role="region"
+                        aria-labelledby="checklist-heading"
+                    >
+                        <h4 id="checklist-heading">✅ Checklist SEO Técnico</h4>
+                        <ul>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    id="check1"
+                                    checked
+                                    disabled
+                                    aria-describedby="check1-desc"
+                                >
+                                <label for="check1">Título optimizado (50-60 caracteres)</label>
+                                <div
+                                    id="check1-desc"
+                                    class="check-desc"
+                                >✅ Implementado en línea 7</div>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    id="check2"
+                                    checked
+                                    disabled
+                                    aria-describedby="check2-desc"
+                                >
+                                <label for="check2">Meta descripción (150-160 caracteres)</label>
+                                <div
+                                    id="check2-desc"
+                                    class="check-desc"
+                                >✅ Implementado en líneas 10-12</div>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    id="check3"
+                                    checked
+                                    disabled
+                                    aria-describedby="check3-desc"
+                                >
+                                <label for="check3">Estructura semántica (header, main, section, article)</label>
+                                <div
+                                    id="check3-desc"
+                                    class="check-desc"
+                                >✅ Implementado en todo el documento</div>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    id="check4"
+                                    checked
+                                    disabled
+                                    aria-describedby="check4-desc"
+                                >
+                                <label for="check4">Atributos alt en imágenes</label>
+                                <div
+                                    id="check4-desc"
+                                    class="check-desc"
+                                >✅ Implementado en línea 110</div>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    id="check5"
+                                    checked
+                                    disabled
+                                    aria-describedby="check5-desc"
+                                >
+                                <label for="check5">Jerarquía de encabezados (H1 → H2 → H3)</label>
+                                <div
+                                    id="check5-desc"
+                                    class="check-desc"
+                                >✅ Implementado en toda la página</div>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    id="check6"
+                                    checked
+                                    disabled
+                                    aria-describedby="check6-desc"
+                                >
+                                <label for="check6">URLs semánticas</label>
+                                <div
+                                    id="check6-desc"
+                                    class="check-desc"
+                                >✅ #w3c, #html5-css3, #accesibilidad, #seo</div>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Sección de conclusión -->
+            <section aria-labelledby="conclusion-heading">
+                <h2 id="conclusion-heading">🎯 Integración de Todos los Conceptos</h2>
+
+                <article>
+                    <h3>¿Cómo trabajan juntos estos estándares?</h3>
+
+                    <!-- Ejemplo visual de integración -->
+                    <div class="integration-demo">
+                        <div class="concept-card w3c-card">
+                            <h4>W3C</h4>
+                            <p>Define las reglas</p>
+                            <span
+                                class="icon"
+                                aria-hidden="true"
+                            >🏛️</span>
+                        </div>
+
+                        <div
+                            class="arrow"
+                            aria-hidden="true"
+                        >→</div>
+
+                        <div class="concept-card html-card">
+                            <h4>HTML5</h4>
+                            <p>Estructura semántica</p>
+                            <span
+                                class="icon"
+                                aria-hidden="true"
+                            >🏗️</span>
+                        </div>
+
+                        <div
+                            class="arrow"
+                            aria-hidden="true"
+                        >→</div>
+
+                        <div class="concept-card css-card">
+                            <h4>CSS3</h4>
+                            <p>Diseño responsive</p>
+                            <span
+                                class="icon"
+                                aria-hidden="true"
+                            >🎨</span>
+                        </div>
+
+                        <div
+                            class="arrow"
+                            aria-hidden="true"
+                        >→</div>
+
+                        <div class="concept-card a11y-card">
+                            <h4>A11y</h4>
+                            <p>Acceso universal</p>
+                            <span
+                                class="icon"
+                                aria-hidden="true"
+                            >♿</span>
+                        </div>
+
+                        <div
+                            class="arrow"
+                            aria-hidden="true"
+                        >→</div>
+
+                        <div class="concept-card seo-card">
+                            <h4>SEO</h4>
+                            <p>Visibilidad online</p>
+                            <span
+                                class="icon"
+                                aria-hidden="true"
+                            >🔍</span>
+                        </div>
+                    </div>
+
+                    <p>
+                        <strong>Resultado final:</strong> Un sitio web que es <em>semánticamente correcto</em>,
+                        <em>visualmente atractivo</em>, <em>accesible para todos</em> y <em>encontrable en
+                            buscadores</em>.
+                    </p>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <!-- Sidebar con información adicional -->
+    <aside
+        role="complementary"
+        aria-labelledby="sidebar-heading"
+    >
+        <div class="container">
+            <h3 id="sidebar-heading">📚 Recursos Adicionales</h3>
+
+            <nav aria-label="Enlaces relacionados">
+                <ul>
+                    <li><a
+                            href="https://www.w3.org/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            W3C Official Website <span class="sr-only">(abre en nueva ventana)</span>
+                        </a></li>
+                    <li><a
+                            href="https://html.spec.whatwg.org/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            HTML5 Specification <span class="sr-only">(abre en nueva ventana)</span>
+                        </a></li>
+                    <li><a
+                            href="https://www.w3.org/WAI/WCAG21/quickref/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            WCAG 2.1 Quick Reference <span class="sr-only">(abre en nueva ventana)</span>
+                        </a></li>
+                    <li><a
+                            href="https://developers.google.com/search/docs"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Google SEO Guidelines <span class="sr-only">(abre en nueva ventana)</span>
+                        </a></li>
+                </ul>
+            </nav>
+
+            <!-- Widget de herramientas -->
+            <div
+                class="tools-widget"
+                role="region"
+                aria-labelledby="tools-heading"
+            >
+                <h4 id="tools-heading">🔧 Herramientas de Validación</h4>
+                <ul>
+                    <li><a
+                            href="https://validator.w3.org/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Validador HTML W3C
+                        </a></li>
+                    <li><a
+                            href="https://jigsaw.w3.org/css-validator/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Validador CSS W3C
+                        </a></li>
+                    <li><a
+                            href="https://wave.webaim.org/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            WAVE Accessibility Evaluator
+                        </a></li>
+                    <li><a
+                            href="https://search.google.com/test/rich-results"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Google Rich Results Test
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Footer semántico -->
+    <footer role="contentinfo">
+        <div class="container">
+            <!-- Información de contacto estructurada -->
+            <address>
+                <h4>Información de Contacto</h4>
+                <p>
+                    <strong>Autor:</strong> Pablo Torres Programación Web<br>
+                    <strong>Email:</strong> <a href="mailto:ptorresp@ups.edu.ec">ptorresp@ups.edu.ec</a><br>
+                    <strong>Universidad:</strong> Universidad Politecnica Salesiana - Ciencias de la Computación
+                </p>
+            </address>
+
+            <!-- Copyright y información legal -->
+            <div class="legal-info">
+                <p>&copy; 2024 Ejemplo de Estándares Web. Contenido con fines educativos.</p>
+                <p>
+                    <small>
+                        Este sitio demuestra la aplicación práctica de estándares web W3C,
+                        incluyendo HTML5 semántico, CSS3 moderno, accesibilidad WCAG 2.1 y
+                        mejores prácticas de SEO.
+                    </small>
+                </p>
+            </div>
+
+            <!-- Botón back to top accesible -->
+            <div class="back-to-top">
+                <a
+                    href="#top"
+                    aria-label="Volver al inicio de la página"
+                >
+                    <span aria-hidden="true">↑</span> Ir arriba
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para funcionalidad accesible -->
+    <script src="script.js"></script>
+</body>
+
+</html>
